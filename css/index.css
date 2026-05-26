@@ -36,19 +36,18 @@ section {
     border-radius: 12px;
 }
 
-
-#Connect {
+#connect {
     text-align: center;
     background-color: rgb(10, 14, 51);
     color: white;
 }
 
-#Connect img {
+#connect img {
     width: 40px;
     height: 40px;
 }
 
-#Connect ul {
+#connect ul {
     display: flex;
     list-style: none;
     justify-content: center;
@@ -58,12 +57,26 @@ section {
     margin:0;
 }
 
-.skill {
-    border:rgb(30, 30, 83) solid 5px;
-    background-color:#f2c6a0;
-    margin-bottom: 10px;
-    padding: 10px;
+#skills ul {
+    background-color: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 30px;
+
+    display: flex;
+    flex-direction: column;
+    list-style: none;
 }
+
+#skills li {
+    background-color:#f6d9bf;
+    border:rgb(30, 30, 83) solid 5px;
+    
+    margin-bottom: 15px;
+    text-align: center;
+    padding: 6px;
+}
+
 .container {
     position: sticky;
     top: 0;
@@ -73,8 +86,9 @@ section {
 .container ul {
     display: flex;
     align-items: center;
-
+    justify-content: space-between;
 }
+
 .container a {
     display: block;
     color: white;
@@ -83,18 +97,19 @@ section {
     text-decoration: none;
 }
 
-.job-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .job {
     background-color: white;
     padding: 15px;
     margin-bottom: 30px;
     border-radius: 12px;
 }
+
+.job-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .job-title span {
     font-style: italic;
     font-weight: bold;
@@ -102,4 +117,10 @@ section {
 
 .job h3 {
     margin: 0;
+}
+
+@media (max-width: 600px) {
+    .container ul {
+        flex-wrap: wrap;
+    }
 }
