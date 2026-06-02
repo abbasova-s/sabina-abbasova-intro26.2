@@ -119,6 +119,53 @@ section {
     margin: 0;
 }
 
+button,
+label,
+input,
+textarea {
+    display: block;
+    font-family: inherit;
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(10, 14, 51);
+    border-radius: 5px;
+}
+
+textarea {
+    min-height: 100px;
+    padding-top: 10px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+#messages ul{
+    list-style: none;
+    padding: 0;
+}
+
+#messages li {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
 @media (max-width: 600px) {
     .container ul {
         flex-wrap: wrap;
