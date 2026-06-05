@@ -71,7 +71,12 @@ fetch('https://api.github.com/users/abbasova-s/repos')
         }
         console.log(repositories);
     })
-    .catch(error => console.error(error))
+    .catch(function(error){
+        console.error(error);
+        const p = document.createElement("p");
+        p.innerText = "Not able to load projects at this time";
+        projectSection.appendChild(p);
+    })
 
 
 
