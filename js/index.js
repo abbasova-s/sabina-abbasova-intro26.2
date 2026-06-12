@@ -44,13 +44,13 @@ messageForm.addEventListener("submit", function (e) {
         <a href="mailto:${usersEmail}">${usersName}</a>
         <span>${usersMessage}</span>`;
 
-  const removeButton = document.createElement("button");
-  removeButton.innerText = "Remove";
-  removeButton.type = "button";
-  removeButton.addEventListener("click", function () {
-    const entry = removeButton.parentNode;
-    entry.remove();
-  });
+    const removeButton = document.createElement("button");
+    removeButton.innerText = "Remove";
+    removeButton.type = "button";
+    removeButton.addEventListener ("click", function(){
+        const entry = removeButton.parentNode;
+        entry.remove();
+    })
 
   newMessage.appendChild(removeButton);
   messageList.appendChild(newMessage);
@@ -59,7 +59,7 @@ messageForm.addEventListener("submit", function (e) {
 });
 
 //Fetching repositories as projects
-const projectSection = document.getElementById("projects");
+const projectSection = document.getElementById("projects"); 
 const projectList = projectSection.querySelector("ul");
 
 fetch("https://api.github.com/users/abbasova-s/repos")
