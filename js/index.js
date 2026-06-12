@@ -33,7 +33,7 @@ messageForm.addEventListener("submit", function(e){
     console.log(usersEmail);
     console.log(usersMessage);
 
-    const messageSection = document.getElementById("messages")
+    const messageSection = document.getElementById("messages");
     const messageList = messageSection.querySelector("ul");
     const newMessage = document.createElement("li");
 
