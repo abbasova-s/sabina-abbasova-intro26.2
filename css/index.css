@@ -154,7 +154,7 @@ button {
 }
 
 
-#messages ul{
+#messages ul {
     list-style: none;
     padding: 0;
 }
@@ -166,17 +166,17 @@ button {
     border-radius: 5px;
 }
 
-#projects ul {
-    display: flex;
-    flex-direction: column;
-    list-style: square;
-}
+#projects ul { 
+    display: flex; 
+    flex-direction: column; 
+    list-style: square; 
+} 
 
-#projects li {
-    background-color: white;
-    padding: 10px;
-    border:rgb(30, 30, 83) solid 3px;
-    border-radius: 5px;
+#projects li { 
+    background-color: white; 
+    padding: 10px; 
+    border:rgb(30, 30, 83) solid 3px; 
+    border-radius: 5px; 
 }
 
 @media (max-width: 600px) {
