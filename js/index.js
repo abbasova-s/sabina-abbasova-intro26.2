@@ -38,7 +38,7 @@ messageForm.addEventListener("submit", function(e){
     const newMessage = document.createElement("li");
 
     newMessage.innerHTML = `
-        <a href="mailto: ${usersEmail}">${usersName}</a>
+        <a href="mailto:${usersEmail}">${usersName}</a>
         <span>${usersMessage}</span>`;
 
     const removeButton = document.createElement("button");
@@ -64,8 +64,12 @@ fetch('https://api.github.com/users/abbasova-s/repos')
 .then(function(data){ 
     const repositories = data; 
     for (let i=0; i<repositories.length; i++){ 
-        const project = document.createElement("li"); 
-        project.innerText = repositories[i].name; 
+        const project = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = repositories[i].html_url;
+        link.target = "_blank";
+        link.innerText = repositories[i].name;
+        project.appendChild(link);
         projectList.appendChild(project); 
     } console.log(repositories); 
 }) 
