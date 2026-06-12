@@ -1,3 +1,4 @@
+//Creating global variables 
 const url_base = 'https://api.open-meteo.com/v1/forecast?'
 const url_temp = '&current=temperature_2m&timezone=auto'
 const url_rain = '&current=rain&timezone=auto'
@@ -9,6 +10,7 @@ const cityInput = document.getElementById("city")
 const message1 = document.getElementById("city-output")
 const message2 = document.getElementById("weather_output");
 
+//Fetching city coordinates
 async function getCoordinates(city){
     try{
         const response = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${city}`)
@@ -38,6 +40,7 @@ async function getCoordinates(city){
     }
 }
 
+//Submit button handler for city search
 cityForm.addEventListener('submit', async function (event){
     event.preventDefault();
     message1.innerText = "";
@@ -46,12 +49,12 @@ cityForm.addEventListener('submit', async function (event){
     const cityFound = await getCoordinates(cityName);
     
     if (cityFound){
-        message1.innerText = "City found";
+        message1.innerText = `${cityName} found`;
         
     } else {message1.innerText = "City wasn't found. Try again";}
 })
 
-
+//Getting current temperature in Celcius of the found city
 async function getTemperature() {
     try{
         if (!latitude || !longitude){
@@ -73,13 +76,13 @@ async function getTemperature() {
     }
 }
 
+//Temperature button handler
 const tempBtn = document.getElementById("temp-btn");
-
 tempBtn.addEventListener("click", function(event){
     getTemperature();
 })
 
-
+//Getting current rain amount in mm of the found city
 async function getRain() {
     try{
         if (!latitude || !longitude){
@@ -101,6 +104,7 @@ async function getRain() {
     }
 }
 
+//Rain button handler
 const rainBtn = document.getElementById("rain-btn");
 rainBtn.addEventListener ("click",function(event){
     getRain();
