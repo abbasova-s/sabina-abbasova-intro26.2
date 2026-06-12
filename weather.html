@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Weather</title>
+    <link href="weather.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>    
+        <h1>The WEATHER today!</h1>
+        <p>There's no bad weather, but unexpected rain can ruin a good mood. Let's make sure that doesn't happen today.
+        </p>
+    </header>
+        <section id="city_search">
+            <h2>What is your city?</h2>
+
+            <form id="city-form">
+                <label for="city">Let's check the weather in: </label>
+                <input 
+                    id="city"
+                    type="text"
+                    name="city"
+                    placeholder="Boston"
+                    required><br>
+             
+                <button type="submit">Search</button>
+            </form>
+        </section>
+        
+        <section id="weather_results">
+            <p><span id="city-output">Please search for a city first.</span></p>
+            <p>Choose what you want to see: <span id="weather_output"></span></p>
+            <button type="button" id="temp-btn">Temperature</button>
+            <button type="button" id="rain-btn">Rain</button>
+        </section>
+
+        <nav><a href="index.html">Back to Portfolio</a>
+        </nav>
+    
+    <script src="weather.js" defer></script>
+</body>
+</html>
