@@ -33,7 +33,7 @@ messageForm.addEventListener("submit", function(e){
     console.log(usersEmail);
     console.log(usersMessage);
 
-    const messageSection = document.getElementById("messages")
+    const messageSection = document.getElementById("messages");
     const messageList = messageSection.querySelector("ul");
     const newMessage = document.createElement("li");
 
@@ -54,3 +54,29 @@ messageForm.addEventListener("submit", function(e){
 
     messageForm.reset();
 });
+
+const projectSection = document.getElementById("projects");
+const projectList = projectSection.querySelector("ul");
+
+fetch('https://api.github.com/users/abbasova-s/repos')
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        const repositories = data;
+        for (let i=0; i<repositories.length; i++){
+            const project = document.createElement("li");
+            project.innerText = repositories[i].name;
+            projectList.appendChild(project);
+        }
+        console.log(repositories);
+    })
+    .catch(function(error){
+        console.error(error);
+        const p = document.createElement("p");
+        p.innerText = "Not able to load projects at this time";
+        projectSection.appendChild(p);
+    })
+
+
+
