@@ -1,3 +1,4 @@
+//Creating footer with current year
 const footer = document.createElement("footer");
 const body = document.body;
 body.appendChild(footer);
@@ -11,6 +12,7 @@ const copyright = document.createElement("p");
 copyright.textContent = `\u00A9 Sabina ${thisYear}`;
 footerEl.appendChild(copyright);
 
+//Adding skills list
 const skills = ["JavaScript", "HTML", "CSS", "GitHub"];
 const skillsSection = document.querySelector("#skills");
 const skillsList = skillsSection.querySelector("ul");
@@ -21,6 +23,7 @@ for (let i=0; i<skills.length; i++){
     skillsList.appendChild(skill);
 }
 
+//Handling message form
 const messageForm = document.querySelector('form[name="leave_message"]');
 messageForm.addEventListener("submit", function(e){
     e.preventDefault();
@@ -42,7 +45,7 @@ messageForm.addEventListener("submit", function(e){
         <span>${usersMessage}</span>`;
 
     const removeButton = document.createElement("button");
-    removeButton.innerText = "remove";
+    removeButton.innerText = "Remove";
     removeButton.type = "button";
     removeButton.addEventListener ("click", function(){
         const entry = removeButton.parentNode;
@@ -55,6 +58,7 @@ messageForm.addEventListener("submit", function(e){
     messageForm.reset();
 });
 
+//Fetching repositories as projects
 const projectSection = document.getElementById("projects"); 
 const projectList = projectSection.querySelector("ul");
 
